@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Ajouter un produit</h1>
-// action cible le fichier à atteindre post transmet les données du formulaire à traitement.php                                                         dans un tableau*/
+// action cible le fichier à atteindre post transmet les données du formulaire à traitement.php dans un tableau
         <form action = "traitement.php" method = "post"> 
                 <label>Nom du produit :
                     <input type="text" name="name">
@@ -29,4 +29,5 @@
             </p>      
         </form>
 </body>
+
 </html>
