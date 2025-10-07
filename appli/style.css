@@ -11,7 +11,7 @@
   height: 100vh;
 }
 header {
-  height: 30vh;
+  height: 20vh;
 }
 nav {
   display: flex;
@@ -87,3 +87,4 @@ form input[type="submit"] {
   border: transparent;
   padding: 10px;
 }
+
