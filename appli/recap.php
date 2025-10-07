@@ -1,6 +1,7 @@
 <?php
 // Récupère le tableau de session
     session_start();
+    
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -56,6 +57,7 @@
             "</tbody>",
             "</table>";
         }
+        var_dump($panier);
         ?>
         </main>
     </body>
