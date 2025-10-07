@@ -63,6 +63,7 @@ input[type="number"] {
   border-radius: 999px;
   border: transparent;
   padding: 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 td,
@@ -87,4 +88,5 @@ form input[type="submit"] {
   border: transparent;
   padding: 10px;
 }
+
 
