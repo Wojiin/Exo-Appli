@@ -1,7 +1,7 @@
 <?php
 # Ouvre ou récupère une session utilisateur
     session_start();
-    $panier = ($_SESSION['products'['qtt']]);
+    
 # Condition qui vérifie la validité définie par les filtres du champ name="submit" du formulaire
     if(isset($_POST['submit'])){ 
         # Retire les caractères spéciaux, empêche l'injection de code via le formulaire         
@@ -21,18 +21,11 @@
                 "total" => $price*$qtt
             ];
             $_SESSION['products'][] = $product;
-            
-        }
-        if(isset($_GET['action'])){
-            switch($GET['action']){
-            case "add":
-            case "delete":
-            case "clear":
-            case "up-qtt":
-            case "down-qtt":
-            }
-        }
+            $_SESSION['message'] = "Produit ajouté au panier avec succès !";
+        } else {
+            $_SESSION['message'] = "Erreur : veuillez remplir correctement le formulaire.";
     }
+}
     
 # "Location:" Redirige l'utilisateur vers la page si le champ n'est pas valide    
     header("Location:index.php");

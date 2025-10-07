@@ -1,8 +1,6 @@
 <?php
-// Récupère le tableau de session
-    session_start();
-    
-    ?>
+session_start();
+?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -12,6 +10,7 @@
         <title>Récapitulatif des produits</title>
     </head>
     <body>
+        <div id="wrapper">
         <header>
             <nav> 
                 <a href="http://localhost/Quentin_MAIA/appli/index.php">Index</a>
@@ -57,8 +56,15 @@
             "</tbody>",
             "</table>";
         }
-        var_dump($panier);
+            $panier = 0;
+            if (isset($_SESSION['products'])) {
+                foreach ($_SESSION['products'] as $product) {
+                $panier += $product['qtt'];
+    }
+}
+echo "<p>Articles dans le panier : $panier</p>";
         ?>
         </main>
+        </div>
     </body>
     </html>

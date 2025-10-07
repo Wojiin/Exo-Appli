@@ -6,15 +6,19 @@
   box-sizing: border-box;
   font-family: "Poppins";
 }
+#wrapper {
+  background: radial-gradient(rgb(139, 195, 245), #1294b8);
+  height: 100vh;
+}
 header {
-height: 30vh;
+  height: 30vh;
 }
 nav {
-    display: flex;     
-    margin: auto;
-    justify-content: center;
-    height: fit-content;
-    }
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  height: fit-content;
+}
 
 h1 {
   font-size: 1.8em;
@@ -22,47 +26,64 @@ h1 {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    gap: 15px;
-    border: 1px, solid, black;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  gap: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 table {
-    display: table-header-group;
-    align-items: center;
-    text-align: center;
-    border: 1px, solid, black;
-    margin: auto; 
+  display: table-header-group;
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  background-color: rgb(139, 195, 245);
+  margin: auto;
+}
+.total {
+  text-align: right;
+}
+input[type="text"],
+input[type="number"] {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 999px;
+  border: transparent;
+  padding: 4px;
 }
 
-
- input[type="text"], input[type="number"]{
-    display: flex;
-    justify-content: space-between;
-    background: white;
-    border-radius: 999px;  
-    padding: 4px;
-    
+td,
+th {
+  width: 100px;
 }
 
-form input[type="submit"]{
-    display: flex;
-    justify-content: space-between;
-    background: white;
-    border-radius: 999px;  
-    padding: 10px;
+input[type="number"] {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 999px;
+  border: transparent;
+  text-align: center;
+}
+
+form input[type="submit"] {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 999px;
+  border: transparent;
+  padding: 10px;
 }
