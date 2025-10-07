@@ -7,9 +7,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css"/>
         <title>Récapitulatif des produits</title>
     </head>
     <body>
+        <header>
+            <nav> 
+                <a href="http://localhost/Quentin_MAIA/appli/index.php">Index</a>
+            </nav>
+        </header>
+        <main>
         <?php
 // Condition qui vérifie si la clé " products " existe et si elle contient des données dans le tableau de session
         if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
@@ -22,6 +29,7 @@
                         "<tr>",
                             "<th>#</th>",
                             "<th>Nom</th>",
+                            "<th>Prix</th>",
                             "<th>Quantité</th>",
                             "<th>Total</th>",
                         "</tr>",
@@ -42,12 +50,13 @@
         }
         // Mise en forme du total général
         echo "<tr>",
-                "<td colspan=4>Total général : </td>",
+                "<td colspan=4 class=total>Total général : </td>",
                 "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
                 "</tr>",
             "</tbody>",
             "</table>";
         }
         ?>
+        </main>
     </body>
     </html>

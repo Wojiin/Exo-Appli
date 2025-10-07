@@ -21,6 +21,15 @@
             ];
             $_SESSION['products'][] = $product;
         }
+        if(isset($_GET['action'])){
+            switch($GET['action']){
+            case "add":
+            case "delete":
+            case "clear":
+            case "up-qtt":
+            case "down-qtt":
+            }
+        }
     }
 # "Location:" Redirige l'utilisateur vers la page si le champ n'est pas valide    
     header("Location:index.php");
