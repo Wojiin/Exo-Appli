@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/de6359c2dd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Ajouter un produit</title>
 </head>
@@ -26,7 +27,7 @@
                 $panier += $product['qtt'];
         }
     }
-        echo " Articles dans le panier : $panier";
+        echo "<p class='panier'> Articles dans le panier : <strong>$panier</strong> </p>";
 ?>
             <form action = "traitement.php" method = "post"> 
                     <label>Nom du produit :

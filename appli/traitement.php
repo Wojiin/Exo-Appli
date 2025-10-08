@@ -1,8 +1,28 @@
 <?php
 # Ouvre ou récupère une session utilisateur
     session_start();
-    
-# Condition qui vérifie la validité définie par les filtres du champ name="submit" du formulaire
+    if(isset($_GET['action'])){
+        switch($_GET['action']){
+            case "delete":
+                if(isset($_SESSION['products'])){
+                unset($_SESSION['products'][$_GET['id']]);};
+                header("Location:recap.php");
+                exit();
+                break;
+            case "clear":
+                unset($_SESSION['products']);
+                echo '<script>alert("Liste supprimé")</script>';
+                break;
+            case "qtt-up":
+                
+                break;
+            case "qtt-down":
+
+                break;
+        }
+    }
+
+    # Condition qui vérifie la validité définie par les filtres du champ name="submit" du formulaire
     if(isset($_POST['submit'])){ 
         # Retire les caractères spéciaux, empêche l'injection de code via le formulaire         
         $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
@@ -15,15 +35,16 @@
         # chaque variable dans le tableau "$_SESSION"
         if($name && $price && $qtt){
             $product = [
+                "delete" => $delete,
                 "name" => $name,
                 "price" => $price,
                 "qtt" => $qtt,
                 "total" => $price*$qtt
             ];
             $_SESSION['products'][] = $product;
-            $_SESSION['message'] = "Produit ajouté au panier avec succès !";
+            $_SESSION['message'] = "<p class='valid'>Produit ajouté au panier avec succès !</p>";
         } else {
-            $_SESSION['message'] = "Erreur : veuillez remplir correctement le formulaire.";
+            $_SESSION['message'] = "<p class='invalid'>Erreur : veuillez remplir correctement le formulaire.</p>";
     }
 }
     
