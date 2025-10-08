@@ -5,19 +5,33 @@
         switch($_GET['action']){
             case "delete":
                 if(isset($_SESSION['products'])){
-                unset($_SESSION['products'][$_GET['id']]);};
+                unset($_SESSION['products'][$_GET['id']]);
+            };
                 header("Location:recap.php");
                 exit();
                 break;
             case "clear":
+                foreach($_SESSION['products'] as $index => $product){
                 unset($_SESSION['products']);
-                echo '<script>alert("Liste supprimé")</script>';
+            };
+                header("Location:recap.php");
+                exit();
                 break;
             case "qtt-up":
-                
+                if(isset($_SESSION['products'])){
+                ($_SESSION['products'][$_GET['id']]['qtt']++);
+                ($_SESSION['products'][$_GET['id']]['total']=$_SESSION['products'][$_GET['id']]['price']*$_SESSION['products'][$_GET['id']]['qtt']);
+            };
+                header("Location:recap.php");
+                exit();
                 break;
             case "qtt-down":
-
+                if(isset($_SESSION['products']) && ($_SESSION['products'][$_GET['id']]['qtt']) > 0){
+                ($_SESSION['products'][$_GET['id']]['qtt']--);
+                ($_SESSION['products'][$_GET['id']]['total']=$_SESSION['products'][$_GET['id']]['price']*$_SESSION['products'][$_GET['id']]['qtt']);
+            };
+                header("Location:recap.php");
+                exit();
                 break;
         }
     }

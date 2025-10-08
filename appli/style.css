@@ -75,14 +75,14 @@ th {
   text-align: right;
 }
 
-.del {
-  color: rgb(172, 0, 37);
-}
-
 a {
   color: black;
 }
-
+.del {
+  color: rgb(172, 0, 37);
+  text-decoration: none;
+  font-weight: 600;
+}
 /***************************INDEX FORMULAIRE*****************************/
 form {
   display: flex;

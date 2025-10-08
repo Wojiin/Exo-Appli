@@ -45,7 +45,7 @@ session_start();
                     "<td>".$index."</td>",
                     "<td>".$product['name']."</td>",
                     "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                    "<td class='qtt'>"."<i class='fa-solid fa-circle-minus'></i>".$product['qtt']."<i class='fa-solid fa-circle-plus'></i>"."</td>",
+                    "<td class='qtt'><a href='traitement.php?action=qtt-down&id=".$index."'><i class='fa-solid fa-circle-minus'></a></i>".$product['qtt']."<a href='traitement.php?action=qtt-up&id=".$index."'><i class='fa-solid fa-circle-plus'></i></a>"."</td>",
                     "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                  "</tr>";
                  // Additionne la somme de tous les prix pour définir le total
@@ -53,7 +53,6 @@ session_start();
         }
         // Mise en forme du total général
         echo "<tr>",
-                "<td colspan=1 class='del'>"."<i class='fa-solid fa-trash-can'></i>"."</td>",
                 "<td colspan=4 class=total>Total général : </td>",
                 "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
                 "</tr>",
@@ -66,7 +65,8 @@ session_start();
                 $panier += $product['qtt'];
     }
 }
- echo "<p class='panier'> Articles dans le panier : <strong>$panier</strong> </p>";
+ echo "<p class='panier'> Articles dans le panier : <strong>$panier</strong> </p><br>
+        <a href='traitement.php?action=clear&id=".$index."'><p class=del>SUPPRIMER LE PANIER</p></a>";
         ?>
         </main>
         </div>
