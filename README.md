@@ -1,4 +1,4 @@
-# 📚 Exercice ELAN Formation — *« Exo-Appli » : Modèle de gestion de panier*
+# 📚 Exercice ELAN Formation — *« Exo-Appli » 
 
 ---
 
