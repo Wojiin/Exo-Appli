@@ -21,12 +21,15 @@
         <main>
             <h1>Ajouter un produit</h1>
 <?php
+    # Initialise une variable pour compter le nombre total d'articles dans le panier
     $panier = 0;
+    # Vérifie si des produits existent dans la session et additionne leurs quantités
      if (isset($_SESSION['products'])) {
         foreach ($_SESSION['products'] as $product) {
                 $panier += $product['qtt'];
         }
     }
+        # Affiche le nombre total d'articles dans le panier
         echo "<p class='panier'> Articles dans le panier : <strong>$panier</strong> </p>";
 ?>
             <form action = "traitement.php" method = "post"> 
@@ -45,12 +48,12 @@
                 </p>
                 <p class=submit>
                     <input type="submit" name="submit" value="Ajouter le produit">
-                </p>      
+                </p>
             </form>
 <?php
-
+    # Affiche un message de confirmation ou d'erreur stocké dans la session
     if(isset($_SESSION['message'])){
-        echo "<p>".$_SESSION['message']."</p>";
+        echo $_SESSION['message'];
     }  
 ?>
         </main>

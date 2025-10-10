@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: "Poppins";
 }
+
 #wrapper {
   background: radial-gradient(rgb(139, 195, 245), #1294b8);
   height: 100vh;
@@ -47,11 +48,11 @@ th {
 }
 
 .index,
-.qtt{
+.qtt {
   display: flex;
 }
 
-.index{
+.index {
   justify-content: space-around;
 }
 
@@ -63,11 +64,11 @@ th {
   justify-content: space-between;
 }
 
-.fa-circle-minus{
+.fa-circle-minus {
   text-align: left;
 }
 
-.fa-circle-plus{
+.fa-circle-plus {
   text-align: right;
 }
 
@@ -125,15 +126,17 @@ form input[type="submit"] {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-
-
 .valid,
-.invalid {
+.invalid,
+.suppr {
   font-size: x-large;
 }
-.valid{
+.valid {
   color: rgb(141, 233, 3);
 }
-.invalid{
+.invalid {
   color: rgb(172, 0, 37);
+}
+.suppr {
+  color: rgb(201, 100, 27);
 }
