@@ -1,4 +1,4 @@
-# 📚 Exercice ELAN Formation — *« Exo-Appli » 
+# 📚 Exercice ELAN Formation — « Exo-Appli » 
 
 ---
 
